@@ -23,6 +23,7 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import CheckNewVersion from './components/CheckNewVersion';
 import { TYPE_LOCAL_STORAGE } from 'utils/constants';
 import { getItem } from 'utils/localStorage';
+import { Lottie } from 'app/components/Lottie/Loadable';
 
 interface Props {}
 
@@ -67,7 +68,7 @@ export const App = memo((props: Props) => {
       </Helmet>
       <CheckNewVersion>
         {({ loading, isLatestVersion, refreshCacheAndReload }) => {
-          if (loading) return <span>Loading</span>;
+          if (loading) return <Lottie />;
           if (!loading && !isLatestVersion) {
             refreshCacheAndReload();
           }

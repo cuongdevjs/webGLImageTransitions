@@ -33,7 +33,7 @@
   "scripts": {
     "prebuild": "npm run generate-build-version",
     "generate-build-version": "node generate-build-version",
-    "start": "PORT=8081 react-scripts start",
+    "start": "PORT=8082 react-scripts start",
     "start:prod": "npm run build && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -110,6 +110,7 @@
     "react-final-form": "6.5.1",
     "react-helmet-async": "1.0.4",
     "react-i18next": "11.3.4",
+    "react-lottie": "1.2.3",
     "react-redux": "7.2.0",
     "react-router-dom": "5.1.2",
     "redux-injectors": "1.3.0",

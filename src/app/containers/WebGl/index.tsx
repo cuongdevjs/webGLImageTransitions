@@ -54,7 +54,8 @@ export const WebGl = memo((props: Props) => {
   React.useEffect(() => {
     if (isMounted && params.type)
       getAllScriptTransition().then(() => {
-        addScript(`/sketch/sketch.js`, `demo`);
+        addScript(`/sketch/dat-gui.js`, `demo`);
+        addScript(`/sketch/sketch.js`, `demo0`);
         addScript(`/sketch/demo${params.type}.js`, `demo${params.type}`);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,7 +75,7 @@ export const WebGl = memo((props: Props) => {
         <main>
           <div className="frame">
             <div className="frame__title-wrap">
-              <h1 className="frame__title">WebGL Image Transitions</h1>
+              <h1 className="frame__title">Image WebGL Transitions</h1>
             </div>
             <div className="frame__links">
               <a
