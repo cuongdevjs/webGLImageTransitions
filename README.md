@@ -1,7 +1,20 @@
-<img width="914" alt="React Boilerplate Meets CRA" src="https://user-images.githubusercontent.com/3495307/80274591-2d5daa00-86e4-11ea-8fba-404f1cdba87e.png" align="center">
-<sub><i>Keywords: Crate React App, React Boilerplate, Custom Template, Typescript, React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
+# Creative WebGL Image Transitions using ReactJS
 
-## License
+A set of interesting looking image transitions including distortion and warp effects made with WebGL.
 
-This project is licensed under the MIT license, Copyright (c) 2019 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+![Featured Image](https://tympanus.net/codrops/wp-content/uploads/2019/11/Webglimagetransitions_featured.jpg)
+
+[Article on Codrops](https://tympanus.net/codrops/?p=44490)
+
+[Demo](http://tympanus.net/Development/webGLImageTransitions/)
+
+## Credits
+
+*   [three.js](https://threejs.org/)
+*   [GL Transitions](https://gl-transitions.com/)
+*   Images from [Unsplash](https://unsplash.com/)
+
+## Thanks
+This project is inspired from project [webGLImageTransitions](https://github.com/akella/webGLImageTransitions/)
+
+[© Codrops 2019](http://www.codrops.com)
