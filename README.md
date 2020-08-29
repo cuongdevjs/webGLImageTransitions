@@ -4,9 +4,7 @@ A set of interesting looking image transitions including distortion and warp eff
 
 ![Featured Image](https://tympanus.net/codrops/wp-content/uploads/2019/11/Webglimagetransitions_featured.jpg)
 
-[Article on Codrops](https://tympanus.net/codrops/?p=44490)
-
-[Demo](http://tympanus.net/Development/webGLImageTransitions/)
+[Demo](https://webgl-transitiions.netlify.app)
 
 ## Credits
 
