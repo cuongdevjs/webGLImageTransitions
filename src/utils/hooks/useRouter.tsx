@@ -2,9 +2,10 @@ import React from 'react';
 import { objectType } from 'types';
 import { history } from 'utils/history';
 import { getItem, setItem, removeItem } from 'utils/localStorage';
-import { LoginPage } from 'app/containers/LoginPage/Loadable';
-import { Dashboard } from 'app/containers/Dashboard/Loadable';
-import { LayoutProtectedRoute } from 'app/containers/LayoutProtectedRoute/Loadable';
+// import { LoginPage } from 'app/containers/LoginPage/Loadable';
+// import { Dashboard } from 'app/containers/Dashboard/Loadable';
+import { WebGl } from 'app/containers/WebGl/Loadable';
+// import { LayoutProtectedRoute } from 'app/containers/LayoutProtectedRoute/Loadable';
 import { TYPE_LOCAL_STORAGE } from '../constants';
 
 const URL_REDIRECT = TYPE_LOCAL_STORAGE.URL_REDIRECT;
@@ -32,12 +33,13 @@ export const useRouter = ({
   isFilterProtectedRoute = false,
 }: Props) => {
   // list path never saved to redirect when logged
-  const PATH_FOR_GUEST: string[] = ['signIn'];
+  const PATH_FOR_GUEST: string[] = ['signIn', 'webgl'];
 
   const urlRedirect = React.useMemo(() => isLogged && getItem(URL_REDIRECT), [
     isLogged,
   ]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const routeOnlyUser = React.useCallback(
     comp => {
       const token = getItem(TOKEN);
@@ -73,29 +75,36 @@ export const useRouter = ({
     Component: any;
   }[] = React.useMemo(
     () => [
+      // {
+      //   path: '/home',
+      //   exact: false,
+      //   onlyGuestAccess: false,
+      //   isMainRoute: true,
+      //   Component: routeOnlyUser(LayoutProtectedRoute),
+      // },
+      // {
+      //   path: '/signIn',
+      //   exact: true,
+      //   onlyGuestAccess: true,
+      //   isMainRoute: true,
+      //   Component: routeOnlyGuest(LoginPage),
+      // },
       {
-        path: '/home',
-        exact: false,
-        onlyGuestAccess: false,
-        isMainRoute: true,
-        Component: routeOnlyUser(LayoutProtectedRoute),
-      },
-      {
-        path: '/signIn',
+        path: '/webgl/:type',
         exact: true,
         onlyGuestAccess: true,
         isMainRoute: true,
-        Component: routeOnlyGuest(LoginPage),
+        Component: routeOnlyGuest(WebGl),
       },
-      {
-        path: '/home/dashboard',
-        exact: true,
-        onlyGuestAccess: false,
-        isMainRoute: false,
-        Component: routeOnlyUser(Dashboard),
-      },
+      // {
+      //   path: '/home/dashboard',
+      //   exact: true,
+      //   onlyGuestAccess: false,
+      //   isMainRoute: false,
+      //   Component: routeOnlyUser(Dashboard),
+      // },
     ],
-    [routeOnlyGuest, routeOnlyUser],
+    [routeOnlyGuest],
   );
 
   return isFilterProtectedRoute

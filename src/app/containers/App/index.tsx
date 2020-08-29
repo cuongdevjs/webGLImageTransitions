@@ -75,7 +75,7 @@ export const App = memo((props: Props) => {
             <AppWrapper>
               <CssBaseline />
               <Switch>
-                <Redirect exact from="/" to="/home" />
+                <Redirect exact from="/" to="/webgl/1" />
                 {routes.map(({ path, Component, props, exact }) => (
                   <Route key={path} exact={exact} path={path}>
                     {({ match }) => <Component {...props} />}

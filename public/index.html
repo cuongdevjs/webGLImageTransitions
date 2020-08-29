@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -27,7 +27,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React Application</title>
+    <title>ThreeJS</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -36,8 +36,49 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <!-- <link rel="stylesheet" href="%PUBLIC_URL%/sketch/demoad.css" /> -->
+    <link rel="stylesheet" href="https://use.typekit.net/fex2uvn.css" />
+    <script>
+      document.documentElement.className = 'js';
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement('style');
+        return (
+          (t.innerHTML = 'root: { --tmp-var: bold; }'),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports('font-weight', 'var(--tmp-var)')
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          'Please view this in a modern browser that supports CSS Variables.',
+        );
+    </script>
+    <script>
+      var get_shader = function (shadersource, shadertype) {
+        var shader = gl.createShader(shadertype);
+        gl.shaderSource(shader, shadersource);
+        gl.compileShader(shader);
+
+        // Check for any compilation error
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+          alert(gl.getShaderInfoLog(shader));
+          return null;
+        }
+
+        return shader;
+      };
+      let sketch;
+    </script>
+    <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
   </head>
-  <body>
+  <body class="demo-1 cda-removeleft cda-naked cda-noimg">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
@@ -52,4 +93,10 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="%PUBLIC_URL%/sketch/three.js"></script>
+  <script src="%PUBLIC_URL%/sketch/dat-gui.js"></script>
+  <script src="%PUBLIC_URL%/sketch/gsap.js"></script>
+  <!-- <script src="%PUBLIC_URL%/sketch/sketch.js"></script> -->
+  <!-- <script src="%PUBLIC_URL%/sketch/demo1.js"></script> -->
+  <!-- <script src="%PUBLIC_URL%/sketch/demoad.js"></script> -->
 </html>

@@ -1,7 +1,7 @@
 import { RouterState } from 'connected-react-router';
-import { LoginPageState } from 'app/containers/LoginPage/types';
+// import { DashboardState } from 'app/containers/Dashboard/types';
 import { AppState } from 'app/containers/App/types';
-import { DashboardState } from 'app/containers/Dashboard/types';
+// import { LoginPageState } from 'app/containers/LoginPage/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /*
@@ -11,7 +11,7 @@ import { DashboardState } from 'app/containers/Dashboard/types';
 export interface RootState {
   app?: AppState;
   router?: RouterState;
-  loginPage?: LoginPageState;
-  dashboard?: DashboardState;
+  // dashboard?: DashboardState;
+  // loginPage?: LoginPageState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

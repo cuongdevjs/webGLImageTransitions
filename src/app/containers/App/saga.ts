@@ -1,7 +1,7 @@
 import { $get } from 'utils/axios';
 import { take, select, fork, put, call, takeLatest } from 'redux-saga/effects';
-import { actions, getMe } from './slice';
-import { login } from '../LoginPage/slice';
+import { getMe } from './slice';
+// import { login } from '../LoginPage/slice';
 
 export function* watchAndLog() {
   while (true) {
@@ -19,12 +19,12 @@ export function* watchAndLog() {
   }
 }
 
-function* watchIsLogged() {
-  while (true) {
-    yield take(login.SUCCESS);
-    yield put(actions.changeIsLogged(true));
-  }
-}
+// function* watchIsLogged() {
+//   while (true) {
+//     yield take(login.SUCCESS);
+//     yield put(actions.changeIsLogged(true));
+//   }
+// }
 
 export function* getMeSaga() {
   try {
@@ -37,6 +37,6 @@ export function* getMeSaga() {
 
 export function* appSaga() {
   if (process.env.NODE_ENV === 'development') yield fork(watchAndLog);
-  yield fork(watchIsLogged);
+  // yield fork(watchIsLogged);
   yield takeLatest(getMe.TRIGGER, getMeSaga);
 }
