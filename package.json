@@ -118,7 +118,7 @@
     "redux-saga-routines": "3.2.3",
     "sanitize.css": "11.0.0",
     "styled-components": "5.0.1",
-    "xlsx": "0.16.5",
+    "xlsx": "0.17.0",
     "yup": "0.29.3"
   },
   "devDependencies": {
