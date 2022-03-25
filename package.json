@@ -53,7 +53,9 @@
     "create:npm-package": "ts-node --project=./internals/ts-node.tsconfig.json ./internals/scripts/create-npm-package.script.ts",
     "publish:npm": "np",
     "version": "npm run create:npm-package",
-    "publish:github": "cross-env PUBLIC_URL='/react-boilerplate-cra-template' npm run build && gh-pages -d build"
+    "publish:github": "cross-env PUBLIC_URL='/react-boilerplate-cra-template' npm run build && gh-pages -d build",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -119,7 +121,8 @@
     "sanitize.css": "11.0.0",
     "styled-components": "5.0.1",
     "xlsx": "0.16.5",
-    "yup": "0.29.3"
+    "yup": "0.29.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.1.1",
@@ -182,5 +185,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://dulich.ddns.net:4001"
+  "proxy": "http://dulich.ddns.net:4001",
+  "snyk": true
 }
